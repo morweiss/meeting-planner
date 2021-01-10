@@ -7,7 +7,9 @@ const rangePickerFunctions = {
         shouldDisable=true;
     }
     disabledTimeRanges.forEach(element => {
-            if(moment(timeToCheckFormatted).isAfter(element.start) && (moment(timeToCheckFormatted).isBefore(element.end))){
+        let start = moment(element.start).format("MM-DD-YYYY");
+        let end = moment(element.end).format("MM-DD-YYYY");
+            if(moment(timeToCheckFormatted).isAfter(start) && (moment(timeToCheckFormatted).isBefore(end))){
                 shouldDisable= true;
                 return;
             }
@@ -18,7 +20,7 @@ const rangePickerFunctions = {
    disableHours(date, disabledTimeRanges) {
         const array = [];
         if(date){
-            let formatDate = date.format("MM-DD-YYYY HH");
+            let formatDate = date.format("MM-DD-YYYY HH:mm");
             if ( formatDate) {
                 if(moment(formatDate).isSame(moment(), "day")) //disable past hours
                     for(let i =0; i < moment().hour(); i++){
