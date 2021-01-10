@@ -1,0 +1,1 @@
+export const ADD_MEETING = 'add_meeting';
