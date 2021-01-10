@@ -1,4 +1,4 @@
-to run the project execute the following commands:
+to run the project go to meetings-planner directory and run the following commands:
 - npm install
 - npm start
 
