@@ -85,7 +85,7 @@ const {sortAscending, StyledTableCell, StyledTableRow} = tableUtils;
                         </StyledTableCell>
                         <StyledTableCell align="left">{row.from}</StyledTableCell>
                         <StyledTableCell align="left">{row.to}</StyledTableCell>
-                        <StyledTableCell align="left">{row.inviteeFirstName + row.inviteeLastName}</StyledTableCell>
+                        <StyledTableCell align="left">{row.inviteeFirstName} {row.inviteeLastName}</StyledTableCell>
                         </StyledTableRow>
                     ))}
                 </TableBody>
