@@ -23,7 +23,7 @@ class MeetingsTableContainer extends Component {
                 <TableContainer component={Paper}>
                     <CustomTable  rows={meetings} header={tableHeader}/>
                 </TableContainer>
-        {meetings.length > 1 && <Typography variant="caption"> *Click on "Meeting title" or "Meeting starting date" to sort.</Typography> }
+                {meetings.length > 1 && <Typography variant="caption"> *Click on "Meeting title" or "Meeting starting date" to sort.</Typography> }
             </Box>
         );
     }

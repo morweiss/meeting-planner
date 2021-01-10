@@ -21,12 +21,11 @@ const rangePickerFunctions = {
         const array = [];
         if(date){
             let formatDate = date.format("MM-DD-YYYY HH:mm");
-            if ( formatDate) {
-                if(moment(formatDate).isSame(moment(), "day")) //disable past hours
-                    for(let i =0; i < moment().hour(); i++){
-                        array.push(i);
-                }
-                disabledTimeRanges.forEach((values) => {
+            if(moment(formatDate).isSame(moment(), "day")) //disable past hours
+                for(let i =0; i < moment().hour(); i++){
+                    array.push(i);
+            }
+            disabledTimeRanges.forEach((values) => {
                 if (moment(formatDate).isSame(values.start, "day") && moment(formatDate).isSame(values.end, "day")){ //disable hours that already taken
                     for (let i = moment(values.start).hour(); i < moment(values.end).hour(); i += 1) 
                         array.push(i);
@@ -40,10 +39,9 @@ const rangePickerFunctions = {
                         array.push(i);
                     }
                 }
-                });
-            
-            }
-    }   
+            });
+
+        }   
         return array;
     },
     disableMinutes(date, disabledTimeRanges){

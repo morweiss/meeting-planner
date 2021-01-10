@@ -13,7 +13,7 @@ function insertMeetingWithOrder(meetingsArr, meeting){
     }
     for (let i=0; i<meetingsArr.length; i++){
         let tempMeetingStartingTime = meetingsArr[i].from;
-        if (moment(newMeetingStartingTime).isBefore(tempMeetingStartingTime)){ //the new meeting should be in the first place
+        if (moment(newMeetingStartingTime).isBefore(tempMeetingStartingTime)){ 
             return meetingsArr.slice(0,i).concat({...meeting}).concat(meetingsArr.slice(i));
         }
     }
